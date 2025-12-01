@@ -47,16 +47,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        medical: {
+          glow: "hsl(var(--medical-glow))",
+          neural: "hsl(var(--neural-path))",
         },
+        alert: {
+          warning: "hsl(var(--alert-warning))",
+          danger: "hsl(var(--alert-danger))",
+        },
+        success: "hsl(var(--success-green))",
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-glow': 'var(--gradient-glow)',
+      },
+      boxShadow: {
+        'glow': 'var(--shadow-glow)',
+        'neural': 'var(--shadow-neural)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +87,21 @@ export default {
             height: "0",
           },
         },
+        scan: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(100%)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "scan": "scan 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
