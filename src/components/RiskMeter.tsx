@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
+interface RiskMeterProps {
+  riskLevel: number;
+}
 
-const RiskMeter = () => {
-  const [risk, setRisk] = useState(12);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRisk(prev => {
-        const change = (Math.random() - 0.5) * 3;
-        return Math.max(0, Math.min(100, prev + change));
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+const RiskMeter = ({ riskLevel }: RiskMeterProps) => {
+  const risk = riskLevel;
 
   const getRiskColor = () => {
     if (risk < 30) return "hsl(var(--success-green))";
