@@ -1,10 +1,21 @@
+import { useState, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import FacialAnalysisViewport from "@/components/FacialAnalysisViewport";
 import RiskMeter from "@/components/RiskMeter";
 import NeuralSignalGraph from "@/components/NeuralSignalGraph";
 import MetricCard from "@/components/MetricCard";
+import RiskAlert from "@/components/RiskAlert";
 
 const Index = () => {
+  const [riskLevel, setRiskLevel] = useState(23);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRiskLevel(15 + Math.random() * 70);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
@@ -16,6 +27,11 @@ const Index = () => {
           <p className="text-muted-foreground">Continuous monitoring of facial asymmetry and neural response patterns</p>
         </div>
         
+        {/* Risk Alert */}
+        <div className="mb-6">
+          <RiskAlert riskLevel={riskLevel} />
+        </div>
+        
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           {/* Main viewport */}
           <div className="lg:col-span-2">
@@ -24,7 +40,7 @@ const Index = () => {
           
           {/* Risk meter */}
           <div>
-            <RiskMeter />
+            <RiskMeter riskLevel={riskLevel} />
           </div>
         </div>
         

@@ -56,6 +56,11 @@ export default {
           danger: "hsl(var(--alert-danger))",
         },
         success: "hsl(var(--success-green))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
+        },
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
@@ -64,6 +69,7 @@ export default {
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'neural': 'var(--shadow-neural)',
+        'danger': 'var(--shadow-danger)',
       },
       borderRadius: {
         lg: "var(--radius)",
